@@ -1,71 +1,72 @@
-# Car-Price-Prediction
-🚗 Car Price Prediction Using Machine Learning & Gradio
+# 🚗 Car Price Prediction using Machine Learning & Gradio
 
-This project is a car price prediction system built with machine learning techniques trained on a dataset from CarDekho. It includes feature preprocessing, model training, and an interactive Gradio-based web interface for real-time predictions.
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)  
+![Machine Learning](https://img.shields.io/badge/Machine--Learning-Random%20Forest%20%7C%20Linear%20Regression-brightgreen)  
+![Gradio](https://img.shields.io/badge/Gradio-UI-orange)  
+![Status](https://img.shields.io/badge/Project-Completed-success)
 
-📊 Dataset
+> 🎯 **Predict the resale value of used cars based on real-world attributes like brand, fuel type, transmission, and more — with just a few clicks!**
 
-The dataset used is:
+---
 
-📁 CAR DETAILS FROM CAR DEKHO.csv
+## 🗂️ Table of Contents
 
-It contains various car attributes including:
+- [📖 Project Overview](#-project-overview)  
+- [📊 Dataset Description](#-dataset-description)  
+- [⚙️ Features](#️-features)  
+- [🧠 How It Works](#-how-it-works)  
+- [🌐 Gradio Web Interface](#-gradio-web-interface)  
+- [🚀 Getting Started](#-getting-started)  
+- [🧪 Model Evaluation](#-model-evaluation)  
+- [🔮 Future Improvements](#-future-improvements)  
+- [🙌 Acknowledgements](#-acknowledgements)  
+- [📬 Contact](#-contact)
 
-name (car model)
+---
 
-year (manufacturing year)
+## 📖 Project Overview
 
-selling_price (target variable)
+This project is a **car resale price prediction system** powered by **machine learning algorithms** and deployed through a sleek **Gradio web interface**.  
+It allows users to enter details about a used car and receive a predicted resale price in real-time.
 
-km_driven
+💡 Inspired by real data from **CarDekho**, this app is ideal for buyers, sellers, or enthusiasts trying to understand market prices.
 
-fuel (Petrol, Diesel, etc.)
+---
 
-seller_type, transmission, owner, etc.
+## 📊 Dataset Description
 
-⚙️ Features
+📁 `CAR DETAILS FROM CAR DEKHO.csv`  
+This dataset includes over 8,000 entries with key features:
 
-✅ Predicts resale price of a used car
+| Feature         | Description                             |
+|-----------------|-----------------------------------------|
+| `name`          | Car model and brand                     |
+| `year`          | Year of manufacture                     |
+| `selling_price` | Price car was sold for (Target)         |
+| `km_driven`     | Distance driven in kilometers           |
+| `fuel`          | Fuel type: Petrol, Diesel, CNG, etc.    |
+| `seller_type`   | Dealer / Individual / Trustmark Dealer  |
+| `transmission`  | Manual or Automatic                     |
+| `owner`         | Ownership history (First, Second, etc.) |
 
-✅ Preprocessing of categorical and numerical data
+---
 
-✅ Trained with regression models (e.g. Linear Regression, Random Forest)
+## ⚙️ Features
 
-✅ Saves trained model using joblib
+✅ Predict resale price of used cars  
+✅ Clean and preprocess data (label encoding, one-hot encoding, outlier removal)  
+✅ Trained using **Random Forest Regressor**  
+✅ Saves the model pipeline using `joblib`  
+✅ Fully interactive **Gradio UI** for quick predictions  
+✅ Handles invalid inputs gracefully  
+✅ Shareable public link to run the app instantly
 
-✅ Deployed using Gradio for a simple, shareable interface
+---
 
-✅ Handles invalid input with built-in exception handling
+## 🧠 How It Works
 
-🧠 How It Works
-
-Data Cleaning: Handle missing values, convert categories using Label Encoding or One-Hot Encoding.
-
-Model Training: Trained with regression algorithm (default: RandomForestRegressor).
-
-Model Persistence: Save the model and preprocessing pipeline using joblib.
-
-Gradio App: An interactive UI accepts user input and predicts price in real time.
-
-🌐 Gradio App
-
-Input fields:
-
-Car Name
-
-Year
-
-Kilometers Driven
-
-Fuel Type
-
-Seller Type
-
-Transmission
-
-Owner Type
-
-Output:
-Predicted Selling Price in ₹ (INR)
-
-
+```mermaid
+graph TD
+A[Input via Gradio Form] --> B[Preprocessing Pipeline]
+B --> C[Trained ML Model]
+C --> D[Predicted Selling Price]
